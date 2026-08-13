@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/profileFragment"
+            android:icon="@drawable/account_cowboy_hat"
+            android:title="Profile" />
+        <item
+            android:id="@+id/playerFragment"
+            android:icon="@drawable/ic_play_arrow_black_24dp"
+            android:title="Media Player" />
+        <item
+            android:id="@+id/friendsFragment"
+            android:icon="@drawable/account_multiple"
+            android:title="Friends" />
+        <item
+            android:id="@+id/libraryFragment"
+            android:icon="@drawable/playlist_music"
+            android:title="Library" />
+    </group>
+</menu>

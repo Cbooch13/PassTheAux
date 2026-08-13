@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/profileFragment">
+
+    <!-- Navigation places the label in the Toolbar -->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="edu.cs371m.passtheaux.view.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/profile_fragment" />
+
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="edu.cs371m.passtheaux.view.PlayerFragment"
+        android:label="Music Player"
+        tools:layout="@layout/player_fragment" />
+
+    <fragment
+        android:id="@+id/friendsFragment"
+        android:name="edu.cs371m.passtheaux.view.FriendsFragment"
+        android:label="Friends"
+        tools:layout="@layout/friends_fragment">
+        <action
+            android:id="@+id/action_friendsFragment_to_FriendProfileFragment"
+            app:destination="@id/friendProfileFragment">
+            <argument
+                android:name="friend"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="edu.cs371m.passtheaux.view.LibraryFragment"
+        android:label="Library"
+        tools:layout="@layout/library_fragment" />
+
+    <fragment
+        android:id="@+id/friendProfileFragment"
+        android:name="edu.cs371m.passtheaux.view.FriendProfileFragment"
+        android:label="Friend Profile"
+        tools:layout="@layout/profile_fragment">
+        <argument
+            android:name="friend"
+            app:argType="string" />
+    </fragment>
+
+
+
+
+<!--    <fragment-->
+<!--        android:id="@+id/settingsFragment"-->
+<!--        android:name="musicplayer.cs371m.musicplayer.view.SettingsFragment"-->
+<!--        android:label="Settings"-->
+<!--        tools:layout="@layout/settings_fragment" />-->
+
+</navigation>

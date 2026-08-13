@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="edu.cs371m.passtheaux.view.PlayerFragment"
+    android:orientation="vertical"
+    android:layout_margin="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Write me-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next Up: "
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerNextSongText"
+            android:text="Next Song Name"
+            android:textSize="15sp"
+            />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/playerRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="1.5">
+    </androidx.recyclerview.widget.RecyclerView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/playerAlbumArt"
+            android:scaleType="fitCenter"
+            android:src="@drawable/music"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerSongName"
+            android:gravity="center"
+            android:text="Song Name"
+            android:textSize="24dp"
+            app:layout_constraintVertical_bias="0.33"
+            app:layout_constraintStart_toEndOf="@id/playerAlbumArt"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/playerArtistName"
+            android:text="Artist Name"
+            android:textSize="16dp"
+            app:layout_constraintVertical_bias="0.33"
+            app:layout_constraintStart_toEndOf="@id/playerAlbumArt"
+            app:layout_constraintTop_toBottomOf="@id/playerSongName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="2"
+            android:id="@+id/loopIndicator"
+            android:src="@drawable/loop"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            />
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/playerSkipBackButton"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_skip_previous_24"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            />
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:id="@+id/playerPlayPauseButton"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            />
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:id="@+id/playerSkipForwardButton"
+            android:src="@drawable/ic_baseline_skip_next_24"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            />
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/playerPermuteButton"
+            android:src="@drawable/ic_shuffle_black_24dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:layout_weight="2"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8dp">
+        <TextView
+            android:id="@+id/playerTimePassedText"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="0:00"
+            android:gravity="center"
+            />
+        <SeekBar
+            android:id="@+id/playerSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:progress="0"
+            android:max="100"
+            />
+        <TextView
+            android:id="@+id/playerTimeRemainingText"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="0:00"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
